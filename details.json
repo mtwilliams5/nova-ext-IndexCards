@@ -1,0 +1,10 @@
+{
+	"name": "IndexCards",
+	"version": "1.0.0",
+	"description": "This adds cards to the main index beneath the welcome message, with cards and content controllable through Site Messages",
+	"url": "https://github.com/mtwilliams5/nova-ext-IndexCards",
+	"author": {
+		"name": "Matt Williams",
+		"email": "williams@pegasusfleet.net"
+	}
+}
