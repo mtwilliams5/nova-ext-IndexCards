@@ -1,8 +1,8 @@
-<?php if($data['cards']): ?>
+<?php if($cards): ?>
 <div class="row">
     <div class="card-deck w-100 mx-auto">
         <div class="col-12 col-md mb-3 px-3 px-sm-0 px-xl-3">
-        <?php foreach($data['cards'] as $key => $card): ?>
+        <?php foreach($cards as $key => $card): ?>
             <div class="card h-100 bg-transparent border-light px-0">
                 <div class="card-header bg-dark text-center">
                     <?php echo text_output($card['title'], 'h5', 'card-title page-subhead'); ?>
