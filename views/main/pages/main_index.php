@@ -22,6 +22,6 @@
         </div>
     </div>
 </div>
-<?php else: 
-  echo 'Hello World';// There are no cards, so do nothing
-endif; ?>
+<?php else: ?>
+  <div>There are no cards</div> <?php // There are no cards, but show this for now for debugging ?>
+<?php endif; ?>
