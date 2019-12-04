@@ -1,8 +1,13 @@
 <?php
 
-$this->event->listen(['template', 'render', 'data'], function($event){
+$this->event->listen(['template', 'render', 'data', 'main', 'index'], function($event){
     $event['data']['javascript']
         .= $this->extension['IndexCards']->inline_css('index_cards', 'main', $event['data']);
+});
+
+$this->event->listen(['location', 'view', 'data', 'main', 'main_index'], function($event){
+    $msg_welcome = $event['data']['msg_welcome'];
+    $event['data']['msg_welcome'] = '<div id="welcome-message">' . $msg_welcome . '</div>';
 });
 
 $this->event->listen(['location', 'view', 'output', 'main', 'main_index'], function($event){
@@ -25,6 +30,6 @@ $this->event->listen(['location', 'view', 'output', 'main', 'main_index'], funct
     $event['data']['cards'] = $cards;
 
     $event['output'] .= $this->extension['jquery']['generator']
-        ->select('#tabs')
-        ->before($this->extension['IndexCards']->view('main_index', $this->skin, 'main', $event['data']));
+        ->select('#welcome-message+p+br')
+        ->after($this->extension['IndexCards']->view('main_index', $this->skin, 'main', $event['data']));
 });
